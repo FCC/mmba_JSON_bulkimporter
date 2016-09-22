@@ -1,0 +1,123 @@
+{
+    "sections": {
+        "conditions" : "objects",
+        "condition_breaches" : "array",
+        "tests" : "objects",
+        "requested_tests": "array",
+        "metrics": "objects"
+    },
+    "array" : {
+        "condition_breaches" : {
+            "outfile" : "curr_conditionbreaches.tbl",
+            "active"  : "false"
+        },
+        "requested_tests" : {
+            "outfile" : "curr_requestedtests.tbl",
+            "active"  : "false"
+        }
+    },
+    "objects": {
+        "submission" : {
+        "outfile" : "curr_submission.tbl",
+        "active" : "true",
+        "outformat" :["#submission_string","$enterprise_id","$timestamp:ts2utc","#tzoffset:timestamp","$datetime","$schedule_config_version","$sim_operator_code","$submission_type","$timezone","$_received:ts2utc","$_sourceip","$app_version_code","$app_version_name","$tests:count","$metrics:count","$conditions:count","$os_type","$os_version","$model","$manufacturer","$imei","$imsi","$app_id" ]
+        },
+        "network_data" : {
+            "outfile"   : "curr_networkdata.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","#test_times:timestamp","$timestamp:ts2utc","#tzoffset:timestamp","$connected","$active_network_type_code","$active_network_type","$sim_operator_code","$sim_operator_name","$roaming","$phone_type_code","$phone_type","$network_type_code","$network_type","$network_operator_code","$network_operator_name"]
+        },
+        "gsm_cell_location" : {
+            "outfile"   : "curr_gsmcelllocation.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","#test_times:timestamp","$timestamp:ts2utc","#tzoffset:timestamp","$signal_strength","$umts_psc","$location_area_code","$cell_tower_id"]
+        },
+        "cdma_cell_location" : {
+            "outfile"   : "curr_cdmacelllocation.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","#test_times:timestamp","$timestamp:ts2utc","#tzoffset:timestamp","$system_id","$network_id","$ecio","$dbm","$base_station_id","$base_station_latitude","$base_station_longitude"]
+        },
+        "cell_neighbour_tower_data": {
+            "outfile"   : "curr_cellneighbourtower.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","#test_times:timestamp","$timestamp:ts2utc","#tzoffset:timestamp","$location_area_code","$cell_tower_id","$network_type_code","$network_type","$umts_psc","$rssi"]
+        },
+        "location": {
+            "outfile"   : "curr_location.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","#test_times:timestamp","$timestamp:ts2utc","#tzoffset:timestamp","$location_type","$latitude","$longitude","$accuracy"]
+        },
+        "net_usage" : {
+            "outfile"   : "curr_netusage.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","$timestamp:ts2utc","#tzoffset:timestamp","$duration","$total_rx_bytes","$total_tx_bytes","$mobile_rx_bytes","$mobile_tx_bytes","$app_rx_bytes","$app_tx_bytes"]
+        },
+        "JHTTPGET" : {
+            "metric" : "httpget",
+            "outfile"   : "curr_httpget.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","$timestamp:ts2utc","#tzoffset:timestamp","$success:filter_boolean","$target","$target_ipaddress","$transfer_time","$transfer_bytes","$bytes_sec","$warmup_time","$warmup_bytes","$number_of_threads"]
+        },
+        "JHTTPGETMT" : {
+            "metric" : "httpget",
+            "outfile"   : "curr_httpget.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","$timestamp:ts2utc","#tzoffset:timestamp","$success:filter_boolean","$target","$target_ipaddress","$transfer_time","$transfer_bytes","$bytes_sec","$warmup_time","$warmup_bytes","$number_of_threads"]
+        },
+        "JHTTPPOST" : {
+            "metric" : "httppost",
+            "outfile"   : "curr_httppost.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","$timestamp:ts2utc","#tzoffset:timestamp","$success:filter_boolean","$target","$target_ipaddress","$transfer_time","$transfer_bytes","$bytes_sec","$warmup_time","$warmup_bytes","$number_of_threads"]
+        },
+        "JHTTPPOSTMT" : {
+            "metric" : "httppost",
+            "outfile"   : "curr_httppost.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","$timestamp:ts2utc","#tzoffset:timestamp","$success:filter_boolean","$target","$target_ipaddress","$transfer_time","$transfer_bytes","$bytes_sec","$warmup_time","$warmup_bytes","$number_of_threads"]
+        },
+        "JUDPLATENCY" : {
+            "metric" : "udplatency",
+            "outfile"   : "curr_udplatency.tbl",
+            "active" : "false",
+            "outformat" : ["#index","#submission_string","$timestamp:ts2utc","#tzoffset:timestamp","$success:filter_boolean","$target","$target_ipaddress","$rtt_avg","$rtt_min","$rtt_max","$rtt_stddev","$received_packets","$lost_packets"]
+        },
+        "closest" : {
+            "outfile"   : "curr_closesttarget.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","$timestamp:ts2utc","#tzoffset:timestamp","$closest_target","$ip_closests_target"]
+        },
+        "NETACTIVITY" : {
+            "outfile"   : "curr_netactivity.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","$timestamp:ts2utc","#tzoffset:timestamp","$success:filter_boolean","$maxbytesout","$maxbytesin","$bytesout","$bytesin"]
+       },
+        "CPUACTIVITY": {
+            "outfile"   : "curr_cpuactivity.tbl",
+            "active" : "true",
+            "outformat" : ["#index","#submission_string","$timestamp:ts2utc","#tzoffset:timestamp","$success:filter_boolean","$max_average","$read_average"]
+        },
+        "param_expired" : {
+            "outfile"   : "param_expired.tbl",
+            "active" : "false",
+            "outformat" : ["$timestamp:ts2utc","#tzoffset:timestamp","$success:filter_boolean"]
+        },
+        "DATACAP" : {
+            "outfile"   : "curr_datacap.tbl",
+            "active" : "false",
+            "outformat" : ["#index","#submission_string","$timestamp:ts2utc","#tzoffset:timestamp","$success:filter_boolean"]
+        } 
+    },
+    "enterprise_id" : {
+        "default": {
+            "id" : "no_enterprise_id",
+            "server_info" : ["_received","_sourceip"],
+            "log_function" : "log_all"
+        },
+        "FCC_Public": {
+            "server_info" : ["_received"],
+            "log_function" : "log_anonymous"
+        }
+        
+    }
+}
