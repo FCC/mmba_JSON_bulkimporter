@@ -19,6 +19,9 @@
         if (is_array($json) && isset($json[0])) {
             $json = $json[0];
         }
+        if (!isset($json['_received'])) {
+            $json['_received'] = time();
+        }
         $bname = basename($f);
         $submission_id = str_replace(".json", "", substr($bname, strrpos($bname, "_") + 1 ));
         processSubmission($configuration, $json, $submission_id);
