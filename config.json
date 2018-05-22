@@ -79,7 +79,7 @@
         "JUDPLATENCY" : {
             "metric" : "udplatency",
             "outfile"   : "curr_udplatency.tbl",
-            "active" : "false",
+            "active" : "true",
             "outformat" : ["#index","#submission_string","$timestamp:ts2utc","#tzoffset:timestamp","$success:filter_boolean","$target","$target_ipaddress","$rtt_avg","$rtt_min","$rtt_max","$rtt_stddev","$received_packets","$lost_packets"]
         },
         "closest" : {
